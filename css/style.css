@@ -1,79 +1,154 @@
-*{
-  font-family: "Abel", sans-serif;
-  font-weight: 400rem;
-  font-style: normal;}
+/* 1. Reset general y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Excelente práctica para controlar tamaños de cajas */
+    font-family: "Abel", sans-serif;
+    font-weight: 400; /* Sin unidad (rem/px) */
+    font-style: normal;
+}
 
+/* 2. Fondo de la página */
 body {
     background-image: url(../img/fondo.png);
     background-repeat: repeat;
-    margin: 0px;
+    background-color: #111; /* Color oscuro de respaldo por seguridad */
+    min-height: 100vh;
 }
 
-#contendor{
-  max-width: 1140px;
-  background-color: black;
+/* 3. Contenedor principal (Corregido el nombre y centrado) */
+#contenedor {
+    max-width: 1140px;
+    margin: 0 auto; /* Centra el bloque entero en la pantalla */
+    background-color: black;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Opcional: una sombra sutil para despegarlo del fondo */
 }
 
-h1, h2 {
-  color: whitesmoke;
-  text-align: center;
-  align-content:center;
-  background-color: black;
-  margin-left: 10rem;
-  margin-right: 10rem;
+/* 4. Títulos y textos principales */
+h1, h2, h3 {
+    color: whitesmoke;
+    text-align: center;
+    background-color: black;
+    padding: 2rem 1rem; /* Usamos padding en vez de margins gigantes para dar aire */
 }
 
-header div {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  align-items: center; 
-  background-color: #073040;
+h1 {
+    font-size: 2.5rem;
 }
 
-header div nav {
-  display: flex;
-  gap: 15rem;
+h2 {
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 1.4rem;
+    text-align: left; /* Los subtítulos de los bloques quedan mejor alineados a la izquierda */
+    padding-left: 2rem;
+}
+
+/* 5. Cabecera y Navegación (Limpiamos el div innecesario) */
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center; 
+    background-color: #073040;
+    padding: 1.5rem 0; /* Le da altura al menú */
+}
+
+header nav {
+    display: flex;
+    gap: 2rem; /* Medida lógica para separar los enlaces (unos 32px) */
 } 
 
-header div nav a {
- font-size: 5rem;
- text-decoration: none;
- color: #D5EDF2;
- font-weight: 30rem;
+header nav a {
+    font-size: 1.2rem; /* Medida estándar y legible para menú */
+    text-decoration: none;
+    color: #D5EDF2;
+    font-weight: 700; /* Grosor en número puro */
+    transition: color 0.3s; /* Animación sutil si pasan el mouse */
 }
 
+header nav a:hover {
+    color: #fff; /* Cambia a blanco al pasar el mouse */
+}
+
+/* 6. Sección de contenido (Estructura Flexbox) */
 section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  margin-left: 10rem;
-  margin-right: 10rem;
-  display: flex;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem; /* Separa la imagen del bloque de texto */
+    align-items: flex-start;
 }
 
-span {
-  margin-left: 2rem;
-  color: whitesmoke;
-  background-color: black;
+/* Control de la imagen para que no desborde */
+.anderson-1 {
+    max-width: 40%;
+    height: auto;
+    border: 2px solid #073040;
 }
 
-ul {
- margin-left: 2rem;
-  color: whitesmoke;
-  background-color: black;
-
+/* Caja contenedora del texto del artículo */
+.contenido-texto {
+    max-width: 60%;
 }
 
+/* Estilos para los nuevos párrafos */
+.parrafos {
+    color: whitesmoke;
+    background-color: black;
+    font-size: 1.1rem;
+    line-height: 1.6; /* Mejora muchísimo la lectura del texto */
+    margin-bottom: 1.5rem; /* Separa un párrafo del siguiente */
+    padding: 0 2rem;
+}
+
+/* 7. Pie de página */
 footer {
-  margin-top: 5rem;
-  height: 10rem;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  align-items: center; 
-  background-color: #073040;
+    height: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    background-color: #073040;
 }
 
-iframe {
-  align-items: ;
+footer p {
+    color: whitesmoke;
+}
+
+footer a {
+    color: #D5EDF2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Centrar el video de YouTube */
+.video-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem; /* Le da espacio antes de llegar al footer */
+}
+
+.video-container iframe {
+    max-width: 100%; /* Evita que el video se corte en pantallas de notebooks o celulares */
+    border: none;
+}
+
+/* Estilos para la lista de obras */
+.lista-obras {
+    color: whitesmoke;
+    background-color: black;
+    font-size: 1.2rem;
+    line-height: 2; /* Le da una separación cómoda a cada ítem */
+    padding-left: 3rem; /* Separa los puntitos del borde de la imagen */
+    margin-top: 1rem;
+}
+
+.lista-obras li {
+    margin-bottom: 0.5rem;
 }
